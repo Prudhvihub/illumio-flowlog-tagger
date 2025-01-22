@@ -1,18 +1,17 @@
 # **Flow Log Parser**
 
 ## **Description**
-This program parses a file containing flow log data and maps each row to a tag based on a lookup table. The lookup table is provided as a CSV file with columns `dstport`, `protocol`, and `tag`. The combination of `dstport` and `protocol` determines the applicable tag for each log entry. The program generates two outputs:
+This program parses a file containing flow log data and assigns each row to a tag using a lookup table. The lookup table is provided as a CSV file with three columns: 'dstport', 'protocol', and 'tag'. The combination of 'dstport' and 'protocol' specifies the tag that applies to each log entry. The program has two outputs:
 
-1. **A count of matches for each tag.**
-2. **A count of matches for each `port/protocol` combination.**
+1. Match count for each tag.
+2. Match count for each 'port/protocol' combination.
 
-## **Assumptions**
-- The program **supports only AWS VPC Flow Log Version 2**.
-- The lookup table **must be a CSV file** with three columns: `dstport, protocol, tag`.
-- **Matching is case-insensitive** for protocol names (e.g., `TCP == tcp`).
-- The **program must handle large files efficiently** (tested with 10MB logs and 10,000 mappings).
-- **Only built-in Python libraries** are used (no pandas, Spark, or external dependencies).
-- Logs that do not have a matching `(dstport, protocol)` entry in the lookup table will be tagged as **"Untagged"**.
+## **Assumptions** - This software only supports AWS VPC Flow Log Version 2.
+- The lookup table **must be a CSV file** with three columns named 'dstport, protocol, and tag'.
+- **Protocol names are matched case-insensitively** (for example, 'TCP == tcp').
+- The **program must handle huge files efficiently** (tested with 10MB log files and 10,000 mappings).
+- **Only built-in Python libraries** are used (no pandas, Spark, or other dependencies).
+- Logs without a matching '(dstport, protocol)' entry in the lookup table will be marked as **"Untagged"**.
 
 ---
 
