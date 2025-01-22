@@ -6,7 +6,8 @@ This program parses a file containing flow log data and assigns each row to a ta
 1. Match count for each tag.
 2. Match count for each 'port/protocol' combination.
 
-## **Assumptions** - This software only supports AWS VPC Flow Log Version 2.
+## **Assumptions** 
+- This software only supports AWS VPC Flow Log Version 2.
 - The lookup table **must be a CSV file** with three columns named 'dstport, protocol, and tag'.
 - **Protocol names are matched case-insensitively** (for example, 'TCP == tcp').
 - The **program must handle huge files efficiently** (tested with 10MB log files and 10,000 mappings).
@@ -105,7 +106,7 @@ Output.txt
 
 ## **Submission Details**
 
-🔹 **GitHub Repository:** [Insert Your Repository Link Here]\
+🔹 **GitHub Repository:** [https://github.com/Prudhvihub/illumio-flowlog-tagger]
 🔹 **Submission includes:**
 
 - `flowlog_tagger.py` (Main script)
