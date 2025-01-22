@@ -1,2 +1,0 @@
-# illumio-flowlog-tagger
- Assesment
